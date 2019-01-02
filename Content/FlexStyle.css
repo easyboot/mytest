@@ -1,0 +1,80 @@
+.Flex-bg-default
+{
+    background-color: transparent;
+}
+
+.Flex-bg-success
+{
+    background-color: #00FF00;
+}
+
+.Flex-bg-warning
+{
+    background-color: #FFFF00;
+}
+
+.Flex-bg-danger
+{
+    background-color: #FF0000;
+}
+ 
+.progress-bar-success1 {
+  background-color: #00FF00;
+}
+
+.progress-bar-warning1 {
+  background-color: #FFFF00;
+}
+
+.progress-bar-danger1 {
+  background-color: #FF0000;
+}
+
+.Flex-color-warning
+{
+    color: #ff851b;
+}
+
+.Flex-color-primary
+{
+    color: #00c0ef;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.Flex-color-success
+{
+    color: #00a65a;
+    font-weight:bold;
+    font-size:24px;
+}
+
+.Flex-color-Special
+ {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #00c0ef,
+               0 0 70px  #00c0ef,
+               0 0 80px  #00c0ef,
+               0 0 100px #00c0ef,
+               0 0 150px #00c0ef;
+  }
+
+ 
+@-webkit-keyframes FlexfadeIn {
+
+100% {
+opacity: 1; /*结尾状态 透明度为1*/
+color: #D81B60 ;/*//white;*/
+}
+
+}
+
+.Flex-fadeIn
+{-webkit-animation-name: FlexfadeIn; /*动画名称*/
+-webkit-animation-duration: 2s; /*动画持续时间*/
+-webkit-animation-iteration-count: infinite; /*动画次数 infinite 为无限 否则就是具体次数*/
+-webkit-animation-delay: 0s; /*延迟时间*/
+ 
+}
