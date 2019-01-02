@@ -32,6 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <script src="Content/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="Scripts/common.js"></script>
+    <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -49,6 +50,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#btnCurrentDate').text(CurrentDate.Format('yyyy-MM-dd hh:mm:ss'));
         }
 
+        var ip = returnCitySN.cip;
+        //var ip = "TestIp";
+        //var PhoneOS = '';
+        //returnCitySN是返回的一个对象，其中包含三个属性值，以北京的IP用户为例：
+        //returnCitySN={cip: "124.200.177.10", cid: "110000", cname: "北京市"}
+
+        //判断数组中是否包含某字符串  
+        Array.prototype.contains = function (needle) {
+            for (i in this) {
+                if (this[i].indexOf(needle) > 0)
+                    return i;
+            }
+            return -1;
+        }
+
+        $(function () {
+            $('#txtLocalIP').val(ip);
+            var PhoneModel = GetPhoneModel();
+
+            // PhoneOS = PhoneModel;
+            $('#txtPhoneModel').val(PhoneModel);
+
+            console.log(ip + "   " + PhoneModel);
+            //SaveShuttleBus();
+            SaveShuttleBus();
+        })
+
+        function writeFile(filename, filecontent) {
+            var fso, f, s;
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+            f = fso.OpenTextFile(filename, 8, true);
+            f.WriteLine(filecontent);
+            f.Close();
+            alert('ok');
+
+            
+        }
     </script>
 </head>
 <!--
@@ -152,7 +190,7 @@ desired effect
                                     <li id="liMenuAssetRelease"><a href="https://www.jianshu.com/p/cb0c1a7227e5"><i class="fa fa-sign-out"></i>武功山重装 </a></li>
                                     <li id="liMenuVehicleCargo"><a href="#"><i class="fa fa-truck"></i>千八重装</a></li>
                                     <li id="liMenuVehicleCargo"><a href="#"><i class="fa fa-truck"></i>清凉峰</a></li>
-                                    <li id="liMenuVehicleCargo"><a href="#"><i class="fa fa-truck"></i>清凉峰</a></li>
+                                    <li id="liMenuVehicleCargo"><a href="https://www.jianshu.com/p/e0149b76e0b6"><i class="fa fa-truck"></i>南岳衡山</a></li>
                                 </ul>
                             </li>
                             <li class="treeview">
@@ -183,7 +221,7 @@ desired effect
                             <li id="liMenuDataMaintenanceVOPAreaAuthorizedPerson"><a href="~/DataMaintenance/VOPAreaAuthorizedPerson"><i class="fa fa-car"></i>半指手套</a></li> 
                             <li id="liMenuDataMaintenanceTransitionPeriodEmployee"><a href="~/DataMaintenance/TransitionPeriodEmployee"><i class="fa fa-user"></i>水壶</a></li> 
                             <li id="liMenuDataMaintenanceEmergencyDoorRegion"><a href="~/DataMaintenance/EmergencyDoorRegion"><i class="fa fa-user"></i>头巾</a></li> 
-                            <li id="liMenuDataMaintenanceEmergencyDoorRegion"><a href="~/DataMaintenance/EmergencyDoorRegion"><i class="fa fa-user"></i>头巾</a></li> 
+                            <li id="liMenuDataMaintenanceEmergencyDoorRegion"><a href="~/DataMaintenance/EmergencyDoorRegion"><i class="fa fa-user"></i>帽子</a></li> 
                         </ul>
                     </li>
                     <li class="treeview" id="MenuAuthority">
@@ -207,7 +245,7 @@ desired effect
 
         <!-- Content Wrapper. Contains page content -->
  
-            <div id="divBody" class="content-wrapper container-fluid" style="background-color:#1c1d1f"> @*content-wrapper   container-fluid*@
+            <div id="divBody" class="content-wrapper container-fluid" style="background-color:#1c1d1f">  
                 <!-- Content Header (Page header) -->
  
                 <!-- Main content -->
@@ -216,7 +254,26 @@ desired effect
                     <!--------------------------
                   | Your Page Content Here |
                   --------------------------> 
-                        @RenderBody() 
+                        <!--@RenderBody()--> 
+
+                    <div hidden>
+                        <div class="row">
+                            <span> IP地址</span>
+                            <input type="text" id="txtLocalIP" style="color:black" />
+                        </div>
+                        <br />
+                        <div class="row">
+                            <span> 手机型号</span>
+                            <input type="text" id="txtPhoneModel" style="color:black" />
+
+                        </div>
+
+                        <div class="row">
+                            <span> 调试信息</span>
+                            <input type="text" id="txtMessage" style="color:black" />
+
+                        </div>
+                    </div>
                 </section>
                 <!-- /.content -->
             </div>
