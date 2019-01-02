@@ -1,10 +1,334 @@
-<!DOCTYPE html>
- 
+﻿<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1;IE=EDGE" />
+    <title>易宝户外</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="https://flex.com/sites/default/files/flex_196x196_3.png" type="image/png" />
+    <link href="Content/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- bootstrap datepicker -->
+    <link href="Content/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" >
+    <!-- Font Awesome --> 
+    <link href="Content/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Ionicons --> 
+    <link href="Content/AdminLTE/bower_components/Ionicons/css/ionicons.min.css" rel="stylesheet" />
+    <!-- Theme style --> 
+    <link href="Content/AdminLTE/dist/css/AdminLTE.css" rel="stylesheet" />
+    <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+          page. However, you can choose any other skin. Make sure you
+          apply the skin class to the body tag so the changes take effect. -->
+ 
+    <link href="Content/AdminLTE/dist/css/skins/skin-dark.css" rel="stylesheet" /> 
+    <link href="Content/JQueryTable/jquery.edittable.css" rel="stylesheet" /> 
+    <link href="Content/AdminLTE/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet" />  
+    
+    <link href="Content/AdminLTE/bower_components/select2/dist/css/select2.css" rel="stylesheet" />
+    <link href="Content/FlexStyle.css" rel="stylesheet" />
+
+    <script src="Content/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="Scripts/common.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Google Font -->
+
+    <script type="text/javascript">
+
+
+
+    </script>
 </head>
-<body>
-    <h1>welcome</h1>
-    <h1>welcome1</h1>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini"  >
+    <div class="wrapper" id="divmouse">
+        <!-- Main Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            
+            <a href="http://easyboot.github.io" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>E</b>asy</span>
+                <!-- logo for regular state and mobile devices --> 
+                <span class="logo-lg"><img src="Content/Images/trekking.png" width="80" height="35" /></span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar  navbar-static-top" role="navigation">
+
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">  
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <a href="#" class="navbar-text margin"  > 
+                    <span style="font-weight:bold;font-size:20px;color:white">易宝户外</span> 
+
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+
+                        <!-- Messages: style can be found in dropdown.less-->
+                        <li class="Button">
+
+                            <button class="btn btn-xs btn-block margin btn-flat no-touch btn-outline Flex-color-Special">2019-01-02 08:56:00</button>
+                        </li>
+                        <li class="Button">
+                            
+                            <!--<button class="btn btn-xs btn-block margin" onclick="Logout()">Logout</button>-->
+                        </li>
+                        <li class="Button ">
+                            <span class="margin"> &nbsp; </span> 
+                        </li>
+ 
+                    </ul>
+                </div>
+
+
+            </nav>
+
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+ 
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu" data-widget="tree">
+            
+                     
+                    <li class="header">  </li>
+                    <!-- Optionally, you can add icons to the links --> 
+                    <li class="treeview" id="MenuAssistant">
+                        <a href="#">
+                            <i class="fa fa-list"></i> <span>户外活动</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu"> 
+                          
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i> 2018年
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="liMenuAssetEntry"><a href="~/assets/AssetEntry"><i class="fa fa-sign-in"></i>资产进入登记 </a></li>
+                                    <li id="liMenuAssetRelease"><a href="~/assets/AssetRelease"><i class="fa fa-sign-out"></i>资产放行登记 </a></li>
+                                    <li id="liMenuVehicleCargo"><a href="~/assets/VehicleCargo"><i class="fa fa-truck"></i>货运车辆（7point）<br />检查表 </a></li>
+                                </ul>
+                            </li>
+                            <li class="treeview">
+                                <a href="#">
+                                    <i class="fa fa-circle-o"></i> 2019年
+                                    <span class="pull-right-container">
+                                        <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
+                                </a>
+                                <ul class="treeview-menu">
+                                    <li id="liMenuEmployeeWithoutCard"><a href="~/assets/EmployeeWithoutCard"><i class="fa fa-id-card"></i>员工未带胸卡  <br />登记表 </a></li>
+                                    <li id="liMenuNonWorkTime"><a href="~/assets/NonWorkTime"><i class="fa fa-bell"></i>员工非上下班时间<br />进出登记表 </a></li>
+                                    <li id="liMenuVOPArea"><a href="~/assets/VOPArea"><i class="fa fa-map"></i>VOP区域人员<br />进出登记表 </a></li>
+                                    <li id="liMenuForeignPersonnel"><a href="~/assets/ForeignPersonnel"><i class="fa fa-user-secret"></i>外来人员进车间<br />登记表</a></li>
+                                    <li id="liMenuControlledArea"><a href="~/assets/ControlledArea"><i class="fa fa-map-o"></i>受控区域非授权人员<br />进入登记表 </a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li> 
+ 
+                    <li class="treeview" id="MenuDataMaintenance">
+                        <a href="#">
+                            <i class="fa fa-th-list"></i> <span>户外装备</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="liMenuDataMaintenanceLogBookType"><a href="~/DataMaintenance/LogBookType"><i class="fa fa-book"></i>LogBook类型</a></li>
+                            <li id="liMenuDataMaintenanceDriverAndLicensePlateNumber"><a href="~/DataMaintenance/DriverAndLicensePlateNumber"><i class="fa fa-car"></i>司机车牌号</a></li> 
+                            <li id="liMenuDataMaintenanceVOPAreaAuthorizedPerson"><a href="~/DataMaintenance/VOPAreaAuthorizedPerson"><i class="fa fa-car"></i>VOP区域人员授权</a></li> 
+                            <li id="liMenuDataMaintenanceTransitionPeriodEmployee"><a href="~/DataMaintenance/TransitionPeriodEmployee"><i class="fa fa-user"></i>过渡期员工</a></li> 
+                            <li id="liMenuDataMaintenanceEmergencyDoorRegion"><a href="~/DataMaintenance/EmergencyDoorRegion"><i class="fa fa-user"></i>紧急门区域</a></li> 
+                        </ul>
+                    </li>
+                    <li class="treeview" id="MenuAuthority">
+                        <a href="#">
+                            <i class="fa fa-th-list"></i> <span>权限管理</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li id="liMenuAuthority"><a href="~/Authority/Authority"><i class="fa fa-thumbs-up"></i>权限</a></li>
+                            <li id="liMenuUsers">    <a href="~/Authority/Users">    <i class="fa fa-user">     </i>用户</a></li>
+                            <li id="liMenuRoles">    <a href="~/Authority/Roles">    <i class="fa fa-group">    </i>角色</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+ 
+            <div id="divBody" class="content-wrapper container-fluid" style="background-color:#1c1d1f"> @*content-wrapper   container-fluid*@
+                <!-- Content Header (Page header) -->
+ 
+                <!-- Main content -->
+                <section class="container-fluid" style="overflow-y:auto;" id="sectionBody">
+             
+                    <!--------------------------
+                  | Your Page Content Here |
+                  --------------------------> 
+                        @RenderBody() 
+                </section>
+                <!-- /.content -->
+            </div>
+ 
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        <footer class="main-footer bg-black">
+            <!-- To the right -->
+            <div class="pull-right hidden-xs">
+               Version 1.0.0.1  
+            </div>
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2019 <a href="https://easyboot.github.io/" target="_blank">easyboot</a>.</strong> 
+        </footer>
+        <!-- Control Sidebar -->
+   
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
+    <!-- REQUIRED JS SCRIPTS -->
+    <!-- jQuery 3 -->
+ 
+ 
+    <!-- Bootstrap 3.3.7 --> 
+    <script src="Content/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- AdminLTE App --> 
+    <script src="Content/AdminLTE/dist/js/adminlte.min.js"></script>
+    <!-- bootstrap datepicker -->
+    <script src="Content/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="Content/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="Content/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="Content/AdminLTE/bower_components/select2/dist/js/select2.js"></script>
+ 
+    <script src="Scripts/Document/Validation.js"></script>
+    <script src="Scripts/Document/Employee.js"></script>
+    <script src="Scripts/echarts.js"></script>
+    <script src="Scripts/common.js"></script>
+    <script src="Scripts/Document/RoleAuthority.js"></script>
+ 
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+         Both of these plugins are recommended to enhance the
+         user experience. -->
+    <script type="text/javascript">
+        var BeforeMouseX = 0, BeforeMouseY = 0;
+        var CurrentMouseX = 0, CurrentMouseY = 0;
+
+        $(function () {
+            var RolesIDValue =  uncompileStr(localStorage.getItem("RolesID"));
+            GetUserRolesAuthority(RolesIDValue);
+
+            SetSectionHeight();
+        })
+ 
+
+        function init() { element.setAttribute("AutoComplete", "off"); }
+
+        function SetSectionHeight() {
+
+            $('#sectionBody').height(screen.height - 240);
+        }
+
+        function move(e) {
+            CurrentMouseX = e.pageX;
+            CurrentMouseY = e.pageY;
+        }
+
+        setInterval('CheckNoActionTimeOut()', 60000);
+
+        function CheckNoActionTimeOut() {
+            UserNo = localStorage.getItem('UserNo');
+
+            if (BeforeMouseX == CurrentMouseX || BeforeMouseY == CurrentMouseY) {
+                var url = "/Base/UserLoseEfficacy?UserNo=" + UserNo;;
+                $.ajax({
+                    url: url,
+                    async: false,
+                    type: "POST",
+                    contentType: "application/json",
+                    success: function (data) {
+                        var nowTime = new Date().Format("yyyy-MM-dd hh:mm:ss");
+
+                        if (data) {
+                            window.location.href = "/Login/Login";
+                        }
+                    }
+                });
+            }
+            else {
+                BeforeMouseX = CurrentMouseX;
+                BeforeMouseY = CurrentMouseY;
+
+                var url = "/Base/LastMouseMove?UserNo=" + UserNo;;
+                $.ajax({
+                    url: url,
+                    async: false,
+                    type: "POST",
+                    contentType: "application/json",
+                    success: function (data) {
+                    }
+                });
+            }
+        }
+
+        function ToExcel(type) {
+            var DateFrom = $('#datepickerFrom').val();
+            var DateTo = $('#datepickerTo').val();
+            var Site = localStorage.getItem('Site');
+
+            var url = "/assets/DownloadFile?DateFrom=" + DateFrom + "&DateTo=" + DateTo + "&Type=" + type + "&Site=" + Site;
+            window.location.href = url;
+        }
+    </script>
 </body>
 </html>
