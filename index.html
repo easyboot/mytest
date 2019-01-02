@@ -255,10 +255,8 @@ desired effect
     <script src="Content/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
  
     <script src="Scripts/Document/Validation.js"></script>
-    <script src="Scripts/Document/Employee.js"></script>
     <script src="Scripts/echarts.js"></script>
     <script src="Scripts/common.js"></script>
-    <script src="Scripts/Document/RoleAuthority.js"></script>
  
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
@@ -268,14 +266,14 @@ desired effect
         var CurrentMouseX = 0, CurrentMouseY = 0;
 
         $(function () {
-            var RolesIDValue =  uncompileStr(localStorage.getItem("RolesID"));
-            GetUserRolesAuthority(RolesIDValue);
+            //var RolesIDValue =  uncompileStr(localStorage.getItem("RolesID"));
+           // GetUserRolesAuthority(RolesIDValue);
 
             SetSectionHeight();
         })
  
 
-        function init() { element.setAttribute("AutoComplete", "off"); }
+       // function init() { element.setAttribute("AutoComplete", "off"); }
 
         function SetSectionHeight() {
 
@@ -287,51 +285,7 @@ desired effect
             CurrentMouseY = e.pageY;
         }
 
-        setInterval('CheckNoActionTimeOut()', 60000);
 
-        function CheckNoActionTimeOut() {
-            UserNo = localStorage.getItem('UserNo');
-
-            if (BeforeMouseX == CurrentMouseX || BeforeMouseY == CurrentMouseY) {
-                var url = "/Base/UserLoseEfficacy?UserNo=" + UserNo;;
-                $.ajax({
-                    url: url,
-                    async: false,
-                    type: "POST",
-                    contentType: "application/json",
-                    success: function (data) {
-                        var nowTime = new Date().Format("yyyy-MM-dd hh:mm:ss");
-
-                        if (data) {
-                            window.location.href = "/Login/Login";
-                        }
-                    }
-                });
-            }
-            else {
-                BeforeMouseX = CurrentMouseX;
-                BeforeMouseY = CurrentMouseY;
-
-                var url = "/Base/LastMouseMove?UserNo=" + UserNo;;
-                $.ajax({
-                    url: url,
-                    async: false,
-                    type: "POST",
-                    contentType: "application/json",
-                    success: function (data) {
-                    }
-                });
-            }
-        }
-
-        function ToExcel(type) {
-            var DateFrom = $('#datepickerFrom').val();
-            var DateTo = $('#datepickerTo').val();
-            var Site = localStorage.getItem('Site');
-
-            var url = "/assets/DownloadFile?DateFrom=" + DateFrom + "&DateTo=" + DateTo + "&Type=" + type + "&Site=" + Site;
-            window.location.href = url;
-        }
     </script>
 </body>
 </html>
