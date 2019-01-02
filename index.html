@@ -42,7 +42,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <script type="text/javascript">
 
+        setInterval('DigitalClock()', 1000);
 
+        function DigitalClock() {
+            var CurrentDate = new Date();
+            $('#btnCurrentDate').text(CurrentDate.Format('yyyy-MM-dd hh:mm:ss'));
+        }
 
     </script>
 </head>
@@ -96,7 +101,7 @@ desired effect
                         <!-- Messages: style can be found in dropdown.less-->
                         <li class="Button">
 
-                            <button class="btn btn-xs btn-block margin btn-flat no-touch btn-outline Flex-color-Special">2019-01-02 08:56:00</button>
+                            <button class="btn btn-xs btn-block margin btn-flat no-touch btn-outline Flex-color-Special" id="btnCurrentDate">2019-01-02 08:56:00</button>
                         </li>
                         <li class="Button">
                             
