@@ -87,7 +87,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         function Save(IP,PhoneModel) {
             const query = Bmob.Query('easyboot');
             query.set("IP", IP)
-            query.set("PhotoType", PhoneModel)
+            query.set("PhoneModel", PhoneModel)
             query.save().then(res => {
                 console.log(res)
             }).catch(err => {
